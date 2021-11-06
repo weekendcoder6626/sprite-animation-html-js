@@ -1,0 +1,27 @@
+.animation-container {
+    transform: scale(0.6);
+    height: 216px;
+    width: 384px;
+    overflow: hidden;
+    position: relative;
+}
+
+#animation {
+    position: absolute;
+} 
+
+.vinyl-cover {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    left: 9px;
+    top: 42px;
+    background-color: rgb(160, 160, 160);
+    box-shadow: 2px 2px 10px 2px #000;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.vinyl-cover:hover {
+    box-shadow: 7px 2px 10px 2px #000;
+}
