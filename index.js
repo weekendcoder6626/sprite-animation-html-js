@@ -5,6 +5,15 @@
 //image reference
 const imageElement = document.querySelector('#animation');
 
+//href reference
+const anchor = document.querySelector('#link');
+
+//url input reference
+const urlInput = document.querySelector('#urlInput');
+
+//url
+// const url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+
 //original width of a image
 const originalWidth = 1920;
 const originalHeight = 1080;
@@ -24,7 +33,7 @@ const totalWidth = 13*width;
 const frameRate = 50;
 const frameInterval = 1000/frameRate;
 const totalDuration = 13;
-const lastFrame = 3;
+const lastFrame = 12;
 const firstFrame = 0;
 
 //inital constraints
@@ -42,6 +51,18 @@ let latestLeft;
 //holds the animation
 let animation;
 
+///handling url inputs
+onUrlInputChange = () => {
+    console.log('change');
+    anchor.href = urlInput.value === '' ? "https://www.youtube.com/watch?v=dQw4w9WgXcQ" : urlInput.value ;
+}
+
+// listening to the input
+urlInput.addEventListener('change', onUrlInputChange);
+
+//setting href
+// anchor.href = url;
+
 //setting the width and height for the sprite
 imageElement.width = totalWidth;
 imageElement.height = totalHeight;
@@ -49,6 +70,7 @@ imageElement.height = totalHeight;
 //setting the initial position of the image
 imageElement.style.left = `${initLeft}px`;
 imageElement.style.top = `${initTop}px`;
+
 
 ///stopping the animation
 function stopAnimation() {
